@@ -22,16 +22,7 @@ app.use(cookieParser());
 /**
  * cors => cross origin resource sharing
  */
-// app.use(
-//   cors({
-//     credentials: true,
-//     origin: process.env.ORIGIN,
-//   })
-// );
-
 app.use(cors());
-
-// Define your routes and other middleware
 
 // Example of setting the "Access-Control-Allow-Origin" header for a specific origin
 app.use((req, res, next) => {
