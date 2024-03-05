@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "29f5b0e2-3609-4e29-866c-0bdebd1dce0c",
+		"name": "MERN",
+		"description": "User can upload any post and also like,dislike,comment the post.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22381182",
+		"_collection_link": "https://www.postman.com/orbital-module-saganist-12745637/workspace/mern/collection/22381182-29f5b0e2-3609-4e29-866c-0bdebd1dce0c?action=share&source=collection_link&creator=22381182"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Check Run Server",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"niku\",\r\n    \"email\":\"niku4@gmail.com\",\r\n    \"password\":\"Niku@123\",\r\n    \"phoneNumber\":\"7824792031\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/signup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"niku2@gmail.com\",\r\n    \"password\":\"Niku@124\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTRkMmU0OTI4OTlkZGM1YzQ0NmRkMCIsImVtYWlsIjoibmlrdTJAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOjc4Mjc3OTIwMzIsImlhdCI6MTcwOTQ5NTAyMiwiZXhwIjoxNzA5NTgxNDIyfQ.NjREkaLMrfGSZ9Wvi74ypRvvCEC5Yg86ST6uyrziNbE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"Niku@123\",\r\n    \"newPassword\":\"Niku@124\",\r\n    \"confirmPassword\":\"Niku@124\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/update_password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"update_password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Current User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTRkMmU0OTI4OTlkZGM1YzQ0NmRkMCIsImVtYWlsIjoibmlrdTJAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOjc4Mjc3OTIwMzIsImlhdCI6MTcwOTQ5NTAyMiwiZXhwIjoxNzA5NTgxNDIyfQ.NjREkaLMrfGSZ9Wvi74ypRvvCEC5Yg86ST6uyrziNbE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNumber\":\"8937821410\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/me/update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"me",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Current User",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": [
+								{
+									"key": "algorithm",
+									"value": "HS256",
+									"type": "string"
+								},
+								{
+									"key": "isSecretBase64Encoded",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "payload",
+									"value": "{}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "queryParamKey",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "header",
+									"value": "{}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTRkMmU0OTI4OTlkZGM1YzQ0NmRkMCIsImVtYWlsIjoibmlrdTJAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOjg5Mzc4MjE0MTAsImlhdCI6MTcwOTU5MjEwNCwiZXhwIjoxNzA5Njc4NTA0fQ.oDzRT8aMINS66S_eTvZpeE9xBkRMbUHkSLkfuzIcEtE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/logout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ALL Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTRkMmU0OTI4OTlkZGM1YzQ0NmRkMCIsImVtYWlsIjoibmlrdTJAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOjg5Mzc4MjE0MTAsImlhdCI6MTcwOTUyODM0NSwiZXhwIjoxNzA5NjE0NzQ1fQ.MtKMLsQV_GtIieBXLmic-WZXM9dDvr2HO4P21pAUg60",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Single User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTRkMmU0OTI4OTlkZGM1YzQ0NmRkMCIsImVtYWlsIjoibmlrdTJAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOjg5Mzc4MjE0MTAsImlhdCI6MTcwOTUyODM0NSwiZXhwIjoxNzA5NjE0NzQ1fQ.MtKMLsQV_GtIieBXLmic-WZXM9dDvr2HO4P21pAUg60",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users/65e4b1a775d5af07b7593a06",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"65e4b1a775d5af07b7593a06"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "All user api's here."
+		}
+	]
+}
