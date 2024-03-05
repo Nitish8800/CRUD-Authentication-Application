@@ -22,25 +22,24 @@ app.use(cookieParser());
 /**
  * cors => cross origin resource sharing
  */
-app.use(
-  cors({
-    credentials: true,
-    origin: process.env.ORIGIN,
-  })
-);
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: process.env.ORIGIN,
+//   })
+// );
 
-// app.use(function (req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header(
-//     "Access-Control-Allow-Methods",
-//     "GET,HEAD,OPTIONS,POST,PUT,DELETE"
-//   );
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-//   );
-//   next();
-// });
+app.use(cors());
+
+// Define your routes and other middleware
+
+// Example of setting the "Access-Control-Allow-Origin" header for a specific origin
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+});
 
 dotenv.config({
   path: path.join(__dirname, ".env"),

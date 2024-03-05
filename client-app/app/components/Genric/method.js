@@ -12,7 +12,7 @@ const paths = async (path, method, data, token, contentType) => {
   } // Add more conditions if needed
 
   return await axios({
-    mode: "no-cors",
+    
     method: method,
     url: `${process.env.NEXT_PUBLIC_HOST}${path}`,
     data: data,
